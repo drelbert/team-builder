@@ -9,28 +9,14 @@ class TeamIngredient extends Component {
         let ingredient = null;
 
     switch (this.props.type) {
-        case ('bread-bottom'):
-            ingredient = <div className={classes.BreadBottom}></div>;
+        case ('lead'):
+            ingredient = <div className={classes.Lead}></div>;
             break;
-        case ('bread-top'):
-            ingredient = (
-                <div className={classes.BreadTop}>
-                    <div className={classes.seeds1}></div>  
-                    <div className={classes.seeds2}></div>
-                </div>
-            );
+        case ('dev'):
+            ingredient = <div className={classes.Dev}></div>;
             break;
-        case ('meat'):
-            ingredient = <div className={classes.Meat}></div>;
-            break;
-        case ('salad'):
-            ingredient = <div className={classes.Salad}></div>;
-            break;
-        case ('cheese'):
-            ingredient = <div className={classes.Cheese}></div>;
-            break;
-        default: 
-                ingredient = null;
+        default:
+            ingredient = null;
     }
 
     return ingredient;
