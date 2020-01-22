@@ -13,7 +13,7 @@ class TeamBuild extends Component{
     state = {
         ingredients: {
             lead: 1,
-            dev: 1
+            dev: 0
         }
     }
 
