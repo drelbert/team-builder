@@ -1,0 +1,49 @@
+.ninjaitem {
+    margin: 1rem;
+    width: calc(45% - 2rem);
+    min-width: 17.5rem;
+  }
+  
+  .ninjaitema {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    padding: 1rem;
+    color: white;
+    background: #646363;
+  }
+  
+  .ninja-item a:hover,
+  .ninja-item a:active {
+    background: #f8bbd0;
+  }
+  
+  .ninjacontent {
+    padding: 0;
+  }
+  
+  .ninja-item__image {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 1rem;
+  }
+  
+  .ninjainfo h2 {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: normal;
+    color: #ffd900;
+  }
+  
+  .ninja-item:hover h2,
+  .ninja-item:active h2,
+  .ninja-item:hover h3,
+  .ninja-item:active h3 {
+    color: #292929;
+  }
+  
+  .ninja-item__info h3 {
+    margin: 0;
+  }

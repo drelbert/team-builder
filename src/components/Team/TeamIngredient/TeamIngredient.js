@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import classes from './TeamIngredient.module.css';
 
 //Adding {} to allow for adding of some logic prior to returning JSX
-class teamIngredient extends Component {
+class TeamIngredient extends Component {
     render () {
         let ingredient = null;
 
@@ -22,9 +22,9 @@ class teamIngredient extends Component {
     return ingredient;
   }
 } 
-
-teamIngredient.propTypes = {
+//Prop type validation: note string vs number, bool, etc
+TeamIngredient.propTypes = {
     type: PropTypes.string.isRequired
 };
 
-export default teamIngredient;
+export default TeamIngredient;
