@@ -24,11 +24,25 @@ class TeamBuild extends Component {
         },
         //Adding an hourly rate property 
         baseRate: 80,
+        //Adding a property connected to the send invite method
+        sendInvitations: false
+    }
 
+    //Method for handling the send invite state
+    //const sum for turning object into an array of values
+    updateInviteState (ninjas) {
+        const sum = Object.keys(ninjas)
+            .map(ninjaKey => {
+                return ninjas[ninjaKey];
+            })
+            .reduce((sum, el) => {
+                return sum + el;
+            }, 0);
+        this.setState({sendInvitations: sum > 0});
     }
 
     //Two methods for managing the team state 
-    //In the updatedNinjas cont there is an object using the spread operator to put the old ingredient properties state into the new object 
+    //In the updatedNinjas const there is an object using the spread operator to put the old ingredient properties state into the new object 
     addNinjaHandler = (type) => {
         const oldCount = this.state.ninjas[type];
         const updatedCount = oldCount + 1;
@@ -40,6 +54,7 @@ class TeamBuild extends Component {
         const oldTotal = this.state.baseRate;
         const newTotal = oldTotal + rateAddition;
         this.setState({baseRate: newTotal, ninjas: updatedNinjas});
+        this.updateInviteState(updatedNinjas);
     }
 
     removeNinjaHandler = (type) => {
@@ -56,6 +71,7 @@ class TeamBuild extends Component {
         const oldTotal = this.state.baseRate;
         const newTotal = oldTotal - rateSubtraction;
         this.setState({baseRate: newTotal, ninjas: updatedNinjas});
+        this.updateInviteState(updatedNinjas);
     }
 
     render () {
@@ -72,7 +88,8 @@ class TeamBuild extends Component {
                     ninjaAdded={this.addNinjaHandler}
                     ninjaRemoved={this.removeNinjaHandler} 
                     disabled={disabledInfo} 
-                    price={this.state.rate} />
+                    sendInvitations={this.state.sendInvitations}
+                    rate={this.state.baseRate} />
             </Auxiliary>
         );
     }
