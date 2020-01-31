@@ -24,6 +24,7 @@ const buildControls = (props) => (
         <button 
             className={classes.InviteButton}
             disabled={!props.sendInvitations}
+            onClick={props.invited}
             >INVITE TEAM</button>
     </div>
 );
